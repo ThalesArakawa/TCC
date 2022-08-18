@@ -21,7 +21,7 @@ void loop() {
   sensorValue = analogRead(potPin);
   //cmValue = 13*pow(sensorValue * 0.0048828125 , -1);
   //cmValue = 13.*pow(sensorValue * 0.0048828125 , -1);
-  //cmValue = 8944.44/(sensorValue+1)+3.6; bom
+  cmValue = 8944.44/(sensorValue+1)+3.6; //bom
   //Serial.print("Valor lido = ");
   Serial.print(cmValue);
   Serial.println("\n");
