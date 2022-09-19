@@ -1,0 +1,5 @@
+ngrok config add-authtoken "<AUTH TOKEN>"
+
+ngrok http "<IP>":80
+
+ngrok.com
