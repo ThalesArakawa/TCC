@@ -11,6 +11,8 @@ copies or substantial portions of the Software. -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+  <script src="LabRem/sketch.js"></script>
+  <script src="LabRem/scripts/elementos/cenario.js"></script>
   <style>
     body {
       min-width: 310px;
@@ -72,11 +74,13 @@ copies or substantial portions of the Software. -->
 <body>
   <h2>ESP IR Sharp Sensor</h2>
   <div id="chart-distance" class="highcharts-figure"></div>
-  <div id="chart-distance" class="highcharts-figure"></div>
+  
+  
   <!--<div id="chart-humidity" class="container"></div>
   <div id="chart-pressure" class="container"></div>-->
 </body>
 <script>
+  var circPos = 0;
   var chartD = new Highcharts.Chart({
     chart: { renderTo: 'chart-distance' },
     title: { text: 'Sharp IR Distance' },
@@ -103,7 +107,7 @@ copies or substantial portions of the Software. -->
     },
     credits: { enabled: false }
   });
-  setInterval(function () {
+  setInterval(circPos=function () {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
@@ -119,21 +123,9 @@ copies or substantial portions of the Software. -->
     };
     xhttp.open("GET", "/temperature", true);
     xhttp.send();
+    return y;
   }, 100);
-
-  attPosition(function () {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-          y = parseFloat(this.responseText);
-        //console.log(this.responseText);
-        cenario.circle(y);
-      }
-    };
-    xhttp.open("GET", "/temperature", true);
-    xhttp.send();
-  }, 100)
-
+  
 </script>
 
 </html>
