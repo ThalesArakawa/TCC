@@ -107,7 +107,8 @@ copies or substantial portions of the Software. -->
     },
     credits: { enabled: false }
   });
-  setInterval(circPos=function () {
+  circPos = 0;
+  setInterval(function () {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
@@ -123,7 +124,7 @@ copies or substantial portions of the Software. -->
     };
     xhttp.open("GET", "/temperature", true);
     xhttp.send();
-    return y;
+    circPos = y;
   }, 100);
   
 </script>
