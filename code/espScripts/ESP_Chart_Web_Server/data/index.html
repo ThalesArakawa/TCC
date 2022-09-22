@@ -11,8 +11,8 @@ copies or substantial portions of the Software. -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
-  <script src="LabRem/sketch.js"></script>
-  <script src="LabRem/scripts/elementos/cenario.js"></script>
+  <script src="https://thalesarakawa.github.io/TCC/sketch.js"></script>
+  <script src="https://thalesarakawa.github.io/TCC/cenario.js"></script>
   <style>
     body {
       min-width: 310px;
@@ -71,13 +71,9 @@ copies or substantial portions of the Software. -->
   </style>
 </head>
 
-<body>
   <h2>ESP IR Sharp Sensor</h2>
   <div id="chart-distance" class="highcharts-figure"></div>
   
-  
-  <!--<div id="chart-humidity" class="container"></div>
-  <div id="chart-pressure" class="container"></div>-->
 </body>
 <script>
   var circPos = 0;
@@ -120,11 +116,12 @@ copies or substantial portions of the Software. -->
         } else {
           chartD.series[0].addPoint([x, y], true, false, true);
         }
+        circPos =parseFloat(this.responseText);
       }
+      
     };
     xhttp.open("GET", "/temperature", true);
     xhttp.send();
-    circPos = y;
   }, 100);
   
 </script>
