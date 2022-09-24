@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(windowWidth, 400);
+  createCanvas(windowWidth, 200);
   cenario = new Cenario();
 }
 function draw() {
