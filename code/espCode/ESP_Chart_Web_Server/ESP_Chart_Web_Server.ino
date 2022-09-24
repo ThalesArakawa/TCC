@@ -45,7 +45,6 @@ void setup(){
     delay(1000);
     Serial.println("Connecting to WiFi..");
   }
-  Serial.println("ACHOU WIFI");
 
   // Print ESP32 Local IP Address
   Serial.println("IP");
